@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090a09">
+<title>{{file["original_name"]}} — DiskWala</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<main class="app"><header><a class="logo" href="/">d<span>ↄ</span>Sk<strong>Wala</strong></a></header>
+<section class="card share"><div class="badge">Shared File</div><div class="big">📄</div>
+<h1>{{file["original_name"]}}</h1><p class="muted">{{file["mime_type"]}} · {{file["size"]}} bytes</p>
+{% if file["mime_type"].startswith("image/") %}<img class="media" src="{{url_for('raw',token=file['token'])}}" alt="">
+{% elif file["mime_type"].startswith("video/") %}<video class="media" controls playsinline preload="metadata" src="{{url_for('raw',token=file['token'])}}"></video>
+{% elif file["mime_type"].startswith("audio/") %}<audio controls src="{{url_for('raw',token=file['token'])}}"></audio>{% endif %}
+<div class="actions"><a class="primary" href="{{download_url}}">⬇ Download</a><button id="copy" class="secondary">📋 Copy Link</button></div>
+<input id="url" readonly value="{{request.url}}"><p id="copied"></p></section></main>
+<script>
+const b=document.getElementById("copy"),u=document.getElementById("url"),s=document.getElementById("copied");
+b.onclick=async()=>{try{await navigator.clipboard.writeText(u.value)}catch(e){u.select();document.execCommand("copy")}s.textContent="Share link copied!"};
+</script></body></html>
