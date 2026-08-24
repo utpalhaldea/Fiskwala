@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080909">
+  <meta name="description" content="DiskWala style file sharing website">
+  <title>DiskWala — File Sharing Platform</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <div class="site">
+
+    <header class="topbar">
+      <a class="logo" href="#home" aria-label="DiskWala home">
+        <span class="logo-d">d</span><span class="chain">ↄ</span><span>Sk</span><strong>Wala</strong>
+      </a>
+      <button class="settings" id="settingsButton" type="button" aria-label="Settings">⚙</button>
+    </header>
+
+    <section class="hero" id="home">
+      <p class="welcome">Welcome to</p>
+      <div class="hero-logo">
+        <span>d</span><span class="chain">ↄ</span><span>Sk</span><strong>Wala</strong>
+      </div>
+      <p class="tagline">
+        Your own <em>File Sharing Platform</em> with <u>UNLIMITED</u> cloud storage.
+      </p>
+    </section>
+
+    <section class="card gallery-card" id="upload">
+      <div class="badge">Play Local Video Files from Gallery</div>
+
+      <label class="gallery-button" for="filePicker">
+        <span>▣</span> Open Gallery
+      </label>
+
+      <input id="filePicker" type="file" hidden multiple
+             accept="image/*,video/*,audio/*,.pdf,.zip,.rar,.txt,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+
+      <div id="selectedFiles" class="selected-files" aria-live="polite"></div>
+
+      <button id="clearFiles" class="secondary-button hidden" type="button">
+        Clear Selection
+      </button>
+
+      <p class="small-note">
+        GitHub Pages version: files are previewed locally and are not uploaded to a server.
+      </p>
+    </section>
+
+    <section class="card link-card" id="links">
+      <div class="badge">Access DiskWala Links</div>
+
+      <h2>Input your <em>DiskWala Link</em> to access</h2>
+
+      <div class="link-box">
+        <input id="diskLink" type="url" inputmode="url"
+               autocomplete="off"
+               placeholder="Paste DiskWala URL here..."
+               aria-label="DiskWala URL">
+        <button id="openLink" type="button" aria-label="Open DiskWala link">→</button>
+      </div>
+
+      <p id="linkStatus" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="features card">
+      <div class="badge">Features</div>
+
+      <div class="feature-grid">
+        <article><span>☁</span><b>Infinite Cloud Storage</b></article>
+        <article><span>▱</span><b>Multiple Files Support</b></article>
+        <article><span>⌯</span><b>Easy Sharing via Link</b></article>
+        <article><span>♜</span><b>AI Powered Data Security</b></article>
+        <article><span>◉</span><b>Distributed Video For Fast Playback</b></article>
+        <article><span>✣</span><b>Many More Features too...</b></article>
+      </div>
+    </section>
+
+    <section class="join" id="profile">
+      <h2>Join Us</h2>
+
+      <div class="socials">
+        <a href="#" data-social="Discord" aria-label="Discord">◉</a>
+        <a href="#" data-social="YouTube" aria-label="YouTube">▶</a>
+        <a href="#" data-social="Instagram" aria-label="Instagram">◎</a>
+      </div>
+
+      <a href="#" id="privacyLink">Privacy Policy</a>
+      <p>v4.6.2</p>
+      <p>© DiskWala LLC</p>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a class="nav-item active" href="#home"><span>▣</span><small>Home</small></a>
+      <a class="nav-item" href="#upload"><span>🚀</span><small>Upload</small></a>
+      <a class="nav-item" href="#links"><span>▱</span><small>Files</small></a>
+      <a class="nav-item" href="#profile"><span>●</span><small>Profile</small></a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="settingsDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="closeSettings" type="button">×</button>
+      <h2>Settings</h2>
+      <p>This GitHub Pages version does not use cookies or third-party tracking.</p>
+      <p>All file selection and preview actions happen in your browser.</p>
+      <button class="primary-button" id="doneSettings" type="button">Done</button>
+    </div>
+  </dialog>
+
+  <dialog id="previewDialog">
+    <div class="dialog-content preview-content">
+      <button class="dialog-close" id="closePreview" type="button">×</button>
+      <h2 id="previewTitle">Preview</h2>
+      <div id="previewBody"></div>
+    </div>
+  </dialog>
+
+  <script src="./assets/script.js" defer></script>
+</body>
+</html>
