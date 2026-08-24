@@ -1,1 +1,21 @@
-
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a09"><title>DiskWala — File Sharing</title>
+<link rel="stylesheet" href="/static/style.css"></head><body><main class="app">
+<header><a class="logo" href="/">d<span>ↄ</span>Sk<strong>Wala</strong></a><button id="settings">⚙</button></header>
+<section class="hero"><p>Welcome to</p><div class="hero-logo">d<span>ↄ</span>Sk<strong>Wala</strong></div>
+<p>Your own <em>File Sharing Platform</em> with <u>UNLIMITED</u> cloud storage.</p></section>
+<section class="card upload" id="upload"><div class="badge">Upload Files</div>
+<label class="gallery" for="picker">📁 Open Gallery</label><input id="picker" type="file" hidden multiple
+accept="image/*,video/*,audio/*,.pdf,.zip,.rar,.7z,.txt,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.csv">
+<div id="list"></div><div id="progress" class="progress hidden"><div id="bar"></div></div>
+<button id="uploadBtn" class="primary hidden">Upload & Create Share Link</button>
+<button id="clearBtn" class="secondary hidden">Clear</button><div id="results"></div></section>
+<section class="card links" id="links"><div class="badge">Access DiskWala Links</div><h2>Input your <em>DiskWala Link</em> to access</h2>
+<div class="linkrow"><input id="link" type="url" placeholder="Paste share link here"><button id="open">→</button></div>
+<p id="status"></p></section>
+<section class="card features"><div class="badge">Features</div><div class="grid">
+<article>☁<b>Secure Storage</b></article><article>🔗<b>Share Links</b></article><article>📋<b>Copy Link</b></article>
+<article>⬇<b>Downloads</b></article><article>▶<b>Media Preview</b></article><article>🛡<b>Random Tokens</b></article>
+</div></section><nav><a class="active" href="/">⌂<small>Home</small></a><a href="#upload">🚀<small>Upload</small></a><a href="#links">🔗<small>Links</small></a></nav>
+</main><div id="toast"></div><script src="/static/script.js" defer></script></body></html>
